@@ -198,4 +198,64 @@ const initializeArrayWithRangeRight = (end, start = 0,step = 1) =>
         .map((v,i,arr) => (arr.length - i - 1) * step + start);
 
 result = initializeArrayWithRangeRight(9, 0, 2);
+
+// initializeArrayWithValues
+const initializeArrayWithValues = (n, val = 0) => Array(n).fill(val);
+result = initializeArrayWithValues(5,2);
+
+// initializeNDArray
+const initializeNDArray = (val, ...args) => 
+    args.length === 0 ? val
+        : Array.from({length: args[0]})
+            .map(() => initializeNDArray(val, ...args.slice(1)));
+
+result = initializeNDArray(1, 3); 
+result = initializeNDArray(5, 2,2,2);
+
+// intersection
+const intersection = (a,b) => {
+    const s = new Set(b);
+    return a.filter(x => s.has(x));
+}
+result = intersection([1, 2, 3], [4, 3, 2]); // [2, 3]
+
+// intersectionBy
+const intersectionBy = (a,b,fn) => {
+    const s = new Set(b.map(fn));
+    return a.filter(x => s.has(fn(x)));
+}
+result  = intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [2.1]
+
+// intersectionWith
+const intersectionWith = (a,b,comp) => 
+    a.filter(x => b.findIndex(y => comp(x,y)) !== -1)
+
+result = intersectionWith([1, 1.2, 1.5, 3, 0], [1.9, 3, 0, 3.9], 
+    (a, b) => Math.round(a) === Math.round(b));
+
+// isSorted
+const isSorted = arr => {
+    let direction = -(arr[0] - arr[1]);
+    for(let [i, val] of arr.entries()) {
+        direction = !direction ? -(arr[i-1] - arr[i]) : direction;
+        if(i === arr.length -1) return !direction ? 0: direction;
+        else if ((val -arr[i+1]*direction)>0) return 0;
+    }
+}
+
+result = isSorted([0, 1, 2, 2]); 
+
+// join
+const join = (arr, separator = ',', end = separator) => arr.reduce(
+    (acc, val, i) => 
+        i === arr.length - 2
+            ? acc+val+end
+            : i === arr.length - 1
+          ? acc + val
+          : acc + val + separator,
+    ''
+)
+result = join(['pen', 'pineapple', 'apple', 'pen'], ',', '&');
+
+
 console.log(result);

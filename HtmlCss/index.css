@@ -1,0 +1,13 @@
+body {
+    background: #ffffff;
+}
+.border_style1 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+    background: orange;
+    border-radius: 4px;
+    box-shadow: 10px 10px -5px #888888; 
+    /* x轴阴影， 负数为左。 Y轴阴影，负数为上。模糊度，0或负数为不模糊， 颜色  */
+    
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         html,body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .circle0 {
+            stroke: black;
+            stroke-width: 2;
+            fill:transparent;
+            stroke-dasharray: 104;
+            stroke-dashoffset: 0;
+            animation: circle0 3s linear 1s infinite;
+        }
+        @keyframes circle0 {
+            from {stroke-dashoffset: 0;}
+            to {stroke-dashoffset: 1256;}
+        }
+        .circle1 {
+            stroke: yellow;
+            stroke-width: 3;
+            fill:transparent;
+            stroke-dasharray: 83;
+            stroke-dashoffset: 0;
+            animation: circle1 4s linear 0s infinite reverse;
+        }
+        @keyframes circle1 {
+            from {stroke-dashoffset: 0;}
+            to {stroke-dashoffset: 1004;}
+        }
+    </style>
+</head>
+<body>
+    <?xml version="1.0" standalone="no"?>
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+    "http://www/w3/org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50%" cy="50%" r="100" class="circle0" />
+        <circle cx="50%" cy="50%" r="80" class="circle1" />
+    </svg>
+    <!-- 圆形动画运动注意，圆周周长以及运动顺畅  -->
+</body>
+</html>

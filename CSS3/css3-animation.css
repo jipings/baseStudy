@@ -1,0 +1,36 @@
+.demo1 {
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+    
+}
+.transition {
+    transition:all 2s;
+}
+.demo1:hover {
+    width: 100px;
+    height: 100px;
+    transform: rotateX(180deg);    
+}
+.demo2 {
+    margin: 100px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+    background: green;
+    position: relative;
+}
+.animation {
+    animation-name: myfirst;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 2s; /*	规定动画何时开始*/
+    animation-iteration-count: infinite;
+    animation-direction: alternate; /*规定动画是否在下一周期逆向地播放*/
+    animation: myfirst 5s linear 2s infinite alternate;
+}
+
+@keyframes myfirst {
+    0% {background: green; left: 0}
+    100% {background: red; left: 500px};
+}

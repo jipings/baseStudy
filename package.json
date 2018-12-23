@@ -1,0 +1,29 @@
+{
+  "name": "baseStudy",
+  "version": "1.0.0",
+  "description": "基础学习",
+  "main": "Iterators_and_Generators.js",
+  "scripts": {
+    "start": "babel-node ./Promise/promise.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jipings/baseStudy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jipings/baseStudy/issues"
+  },
+  "homepage": "https://github.com/jipings/baseStudy#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "recast": "^0.16.1"
+  }
+}

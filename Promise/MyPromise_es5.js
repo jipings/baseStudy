@@ -54,13 +54,17 @@ function Promise1(task) {
 console.time('myPro');
 new Promise1((resolve, reject) => {
     resolve('qwe');
-}).then((res) => {console.log(res)})
+}).then((res) => {console.log(res);return res})
+// .then(res => {console.log(res+'2')}) TODO 并不能实现再次链式调用
+
 console.timeEnd('myPro');
 
 console.time('Pro');
 new Promise((resolve,reject) => {
     resolve('qwe1');
-}).then((res) => {console.log(res)})
+}).then((res) => {console.log(res); return res})
+.then(res => console.log(res+1));
+
 console.timeEnd('Pro');
 
 module.exports = Promise1;
